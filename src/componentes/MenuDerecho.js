@@ -4,10 +4,28 @@ export default function MenuDerecho() {
   return (
     <aside className="text-white">
       <h2 className="text-pink-500 font-bold text-sm mb-2">BROWSE BY CATEGORY</h2>
-      <div className="flex flex-wrap gap-2 mb-4">
-        {['CSS', 'React', 'Animation', 'Career', 'JavaScript', 'Next.js', 'General'].map((category) => (
-          <span key={category} className="px-3 py-1 border border-gray-500 rounded-md text-sm">{category}</span>
-        ))}
+      <div className="flex flex-col gap-2 mb-4">
+        {/* Primera fila con máximo 4 elementos */}
+        <div className="flex flex-wrap gap-2">
+          {['CSS', 'React', 'Animation', 'Career', 'JavaScript', 'Next.js', 'General']
+            .slice(0, 4) // Tomar solo los primeros 4 elementos
+            .map((category) => (
+              <span key={category} className="px-3 py-1 border border-gray-500 rounded-md text-sm">
+                {category}
+              </span>
+            ))}
+        </div>
+
+        {/* Segunda fila con los elementos restantes */}
+        <div className="flex flex-wrap gap-2">
+          {['CSS', 'React', 'Animation', 'Career', 'JavaScript', 'Next.js', 'General']
+            .slice(4) // Tomar los elementos a partir del índice 4
+            .map((category) => (
+              <span key={category} className="px-3 py-1 border border-gray-500 rounded-md text-sm">
+                {category}
+              </span>
+            ))}
+        </div>
       </div>
       <h2 className="text-pink-500 font-bold text-sm mb-2">POPULAR CONTENT</h2>
       <ul className="space-y-2">
